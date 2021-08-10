@@ -1,8 +1,8 @@
 #!/bin/bash -l
 
-echo "======================"
-echo "= Linting YAML files ="
-echo "======================"
+echo "============================="
+echo "= Linting YAML files custom ="
+echo "============================="
 
 if [[ -n "$INPUT_CONFIG_FILE" ]]; then
     options+=(-c "$INPUT_CONFIG_FILE")
