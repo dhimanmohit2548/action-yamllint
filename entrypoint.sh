@@ -28,6 +28,6 @@ shopt -s globstar
 options+=("${INPUT_FILE_OR_DIR:-.}")
 shopt -u globstar
 
-log=$(yamllint "${options[@]}")
-echo $log
-echo "::set-output name=log::$log"
+yamllint "${options[@]}" &> >(sudo tee -a ./output.log)
+value=$(<output.log)
+echo "::set-output name=log::$value"
