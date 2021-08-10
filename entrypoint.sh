@@ -29,4 +29,5 @@ options+=("${INPUT_FILE_OR_DIR:-.}")
 shopt -u globstar
 
 log=$(yamllint "${options[@]}")
+echo $log
 echo "::set-output name=log::$log"
