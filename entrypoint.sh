@@ -29,8 +29,10 @@ options+=("${INPUT_FILE_OR_DIR:-.}")
 shopt -u globstar
 
 yamllint "${options[@]}" &> >(sudo tee -a ./output.log)
+
 ECODE=$?
-ZLOG=$(<./output.log)
-echo "::set-output name=log::$(echo $ZLOG)"
+
+# ZLOG=$(<./output.log)
+# echo "::set-output name=log::$(echo $ZLOG)"
 
 exit $ECODE
