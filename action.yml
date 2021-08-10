@@ -24,7 +24,10 @@ inputs:
     description: 'Output only error level problems'
     required: false
     default: "false"
-
+outputs:
+  log:
+    description: >
+      All the output in a log file.
 runs:
   using: 'composite'
   steps:
