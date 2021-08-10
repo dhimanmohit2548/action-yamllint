@@ -30,5 +30,5 @@ shopt -u globstar
 
 yamllint "${options[@]}" &> >(sudo tee -a ./output.log)
 
-log=$(<./output.log)
-echo "::set-output name=log::$log"
+ZLOG=$(<./output.log)
+echo "::set-output name=log::$(echo $ZLOG)"
