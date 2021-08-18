@@ -24,11 +24,8 @@ fi
 
 # Enable globstar so ** globs recursively
 shopt -s globstar
-# Use the current directory by default
-options+=("${INPUT_FILE_OR_DIR:-.}")
-shopt -u globstar
 
-yamllint "${options[@]}" &> >(sudo tee -a ./output.log)
+yamllint "${options[@]}" ${INPUT_FILE_OR_DIR:-.} &> >(sudo tee -a ./output.log)
 
 ECODE=$?
 
